@@ -1,0 +1,11 @@
+.report-section{
+    width: 100%;
+    justify-content: center;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(5,1fr);
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
