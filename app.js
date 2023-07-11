@@ -41,7 +41,6 @@ app.use(tagRoutes)
 
 
 app.get('*', (req, res) => {
-  req.session.setItem('name', "samir");
   res.send('test!')
 })
 

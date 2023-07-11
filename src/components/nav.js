@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from 'react-router-dom';
 
 const Nav = ()=>{
 const [isOpen, Navtoggler] =  useState(false) 
@@ -8,11 +9,18 @@ const [isOpen, Navtoggler] =  useState(false)
         <div className='nav'>
             <div className="container">
                 <div className="navContent">
-
-                <div className='logo'>
-                
-                    شبكة بحوث وتقارير ومعلومات 
-                </div>
+                <Link to="/admin">
+                    <div className='logo'>
+                    
+                        admin 
+                    </div>
+                </Link>
+                <Link to="/demo">
+                    <div className='logo'>
+                    
+                        demo 
+                    </div>
+                </Link>
                 <div className='link-button' onClick={()=>{
                     Navtoggler((open)=>{
                         return !open
