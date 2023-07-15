@@ -83,5 +83,5 @@ sequelize.sync({force:true}).then((data)=>{
 
 }).catch(()=>{})
 
-app.listen(process.env.port)
-console.log(process.env.port)
+app.listen(5000)
+console.log(5000)
