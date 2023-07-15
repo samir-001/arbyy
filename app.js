@@ -19,6 +19,7 @@ const Tags =require("./models/tags")
 const ArticleTypes =require("./models/articleTypes")
 const editeArticleRequest =require("./models/editeArticleRequest")
 const ArticleRequest = require('./models/editeArticleRequest')
+const { tree } = require('gulp')
 require('dotenv').config()
 const port = process.env.PORT;
 const app = express()
@@ -70,7 +71,7 @@ Tags.belongsToMany(Articles, {
   through: 'ArticleTage',
 });
 
-sequelize.sync({}).then((data)=>{
+sequelize.sync({force:true}).then((data)=>{
     bcrypt.hash("123",12).then((hash)=>{
     const user =  Users.create({
       name:"samir",
@@ -80,5 +81,7 @@ sequelize.sync({}).then((data)=>{
   })
 
 
-  app.listen(port)
 }).catch(()=>{})
+
+app.listen(process.env.port)
+console.log(process.env.port)
