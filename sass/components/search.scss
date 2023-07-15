@@ -1,0 +1,35 @@
+.search-engine{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #000;
+}
+.search {
+    width: 500px;
+    height: 32px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    position: relative;
+    .fa-search {
+        position: absolute;
+        top: 7px;
+        left: 12px;
+        color: #999;
+      }
+     > input {
+        border: none;
+        outline: none;
+        font-size: 14px;
+        color: #333;
+        padding-right: 36px;
+      }
+      
+  }
+  
+ 
+  

@@ -1,0 +1,75 @@
+.input-group{
+  width: 500px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+    &__element{
+        width: 100%;
+        border: 1px solid #000;
+        border-radius: 8px;
+        padding:5px;
+        margin-top: 10px;
+        outline: none;
+        text-align: right;
+      
+    }
+    &__label{
+        font-size: 16px;
+        align-self: right;
+    }
+    &__message{
+        font-size: 10px;
+        align-self:right ;
+    }
+
+}
+.text-error{
+    font-size: 14px;
+    color: red;
+}
+.border-error{
+    border: 1px solid red;    
+
+}
+
+.border-success{
+    border: 1px solid #C4D7B2;
+}
+.form-btn{
+    font-weight: bold;
+    padding: 7px 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #1f6f7e;
+}
+.form-btn-success{
+    margin: 5px;
+    font-weight: bold;
+    padding: 7px 10px;
+    border-radius: 5px;
+    border: none;
+    color: #1f6f7e;
+    border: 1px solid #1f6f7e;
+    background-color: white;
+    &:hover{
+        color: white;
+        background-color:#1f6f7e
+    
+        }
+}
+.form-btn-danger{
+    margin: 5px;
+    font-weight: bold;
+    padding: 7px 10px;
+    border-radius: 5px;
+    border: none;
+    color: #7e1f1f;
+    border: 1px solid #7e1f1f;
+    background-color: white;
+    &:hover{
+    color: white;
+    background-color:#7e1f1f
+
+    }
+}

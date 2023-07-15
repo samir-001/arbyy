@@ -1,0 +1,29 @@
+.article-card{
+    padding:20px ;
+    border-radius: 22px;
+    border: 1px solid #000 ;
+    position: relative;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+    &:hover{
+        background-color: rgba(253, 233, 233, 0.363);
+    }
+    &__title{
+        padding-right: 20px;
+        font-weight: bold;
+        font-size: 18px;
+
+    }
+     &__content{
+        padding: 10px 20px;
+        font-size: 16px;
+     }
+    &__control{
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top:0;
+        left: 15px;
+    }
+}

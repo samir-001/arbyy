@@ -1,4 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
 .report-section{
+    margin-top: 20px;
     width: 100%;
     justify-content: center;
     display: grid;
@@ -18,4 +25,23 @@
     background-color: black;
     color: white;
 
+}
+.article-view{
+    width: 50%;
+    margin:150px auto;
+    text-align: right;
+
+    &__title{
+        font-weight: bold;
+        margin: 20px 0;
+    }
+}
+.logIn-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: right;
+    margin-top:150px;
 }

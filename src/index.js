@@ -1,32 +1,79 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './index.css'
+import App from './App'
+import { Navigate } from 'react-router-dom';
+import reportWebVitals from './reportWebVitals'
 import {store} from "./store"
 import { Provider } from 'react-redux'
-import Demo from "./components/demo"
-import Admin from "./components/admin/adminDashBoard"
-
-
-import {createBrowserRouter,RouterProvider} from "react-router-dom";
+import Home from "./pages/home"
+import AdminDashBoard from "./pages/adminDashBoard"
+import Table from './pages/Table'
+import Main from "././pages/main"
+import {createBrowserRouter,RouterProvider} from "react-router-dom"
+import Artilce from './pages/Article'
+import Login from './pages/logIn';
+import ArtilcesControl from "./pages/artilcesControl"
 
 const router = createBrowserRouter([
-  {
+
+
+  { 
     path: "/",
     element: <App/>,
     children:[
       {
-        path:"/admin",
-        element:<Admin/>
+        path: "/article/:id",
+        element: <Artilce/>,
       },
       {
-        path:"/demo",
-        element:<Demo/>
+        path: "*",
+        element: <Navigate to="./"/>,
       },
-
+      {
+        path: "/login",
+        element: <Login/>,
+      },
+      {
+        path:"/",
+        element:<Home/>
+      },
+      {
+       
+        path:"/admin",
+        element:<AdminDashBoard/>,
+        children:[
+          {
+            path:"",
+            element:<Main/>
+          },
+          {
+            path:"articles",
+            element:<ArtilcesControl/>
+          },
+          
+          {
+            path:"users",
+            element:<Table></Table>          
+          },
+          
+          {
+            path:"tags",
+            element:<Table  ></Table>
+          },
+          {
+            path:"comments",
+            element:<Table ></Table>
+          },
+          {
+            path:"messages",
+            element:<Table  ></Table>
+          }
+        ]
+      },
     ]
   },
+
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

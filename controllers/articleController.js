@@ -35,7 +35,6 @@ exports.addArticle = (req,res,next)=>{
 
     const article = await Articles.findOne({ where: { Aid:req.body.id } });
 
-    console.log(req.body.id)
 
 
     if (!article) {
@@ -53,5 +52,23 @@ exports.addArticle = (req,res,next)=>{
     });
 
   }
+  exports.getAllArticles = async(req,res,next)=>{
+    
+
+    const article = await Articles.findAll({limit:100});
+    console.log(article)
+    if (!article) {
+      return res.status(400).json({
+        message: " doesn't exists",
+      });
+    } 
+    res.status(200).json({
+      message: "",
+      data: article,
+      err:[]
+    });
+
+  }
+
 
     
