@@ -10,6 +10,7 @@ const Articles = sequelize.define('Articles', {
     primaryKey: true
   },
   title: Sequelize.STRING,
+  visits: Sequelize.INTEGER,
   content: {
     type: Sequelize.STRING,
     length: 5000,

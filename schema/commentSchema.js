@@ -4,7 +4,7 @@ const yup = require("yup");
 
 exports.linkSchema = yup.object({
  
-    name: yup.string().required(),
+    id: yup.required(),
     content: yup.string().min(8).max(250).required(),
 
  

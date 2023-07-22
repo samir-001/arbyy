@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize('arbyy', 'root', '', {
-  dialect: 'mariadb',
+  dialect: 'mysql',
 });
 
 module.exports = sequelize;

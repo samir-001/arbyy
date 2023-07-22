@@ -2,8 +2,9 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const User = require('../models/users');
 var jwt = require('jsonwebtoken');
+const loginTokens = require("../models/loginTokens");
 
-console.log(process.env.PORT) 
+
 
 const router = express.Router();
 
@@ -26,9 +27,15 @@ console.log(name,password)
 
   // Create a JWT token for the user.
   const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET);
+  const saveloginToDatabase = new loginTokens({
+    Uid:user.Uid,
+    token:token,
+  })
+  saveloginToDatabase.save().then(() => {
+    res.status(200).send({ token });
+  }).catch((err) => {
+    res.status(400).json(err);
+  }); 
 
-  
-  // Send the token back to the client.
-  res.status(200).send({ token });
 });
 

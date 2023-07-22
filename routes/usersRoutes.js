@@ -8,7 +8,7 @@ const { linkSchema } = require("../schema/userSchema")
 
 const router = express.Router()
   
-router.post("/addUser",Uservalidation(linkSchema),hashPass,userController.addUser)
+router.post("/addUser",Uservalidation,hashPass,userController.addUser)
 
 router.post("/editUser",Uservalidation(linkSchema),hashPass,userController.editeUser)
 

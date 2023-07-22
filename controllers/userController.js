@@ -1,4 +1,5 @@
 const Users = require("../models/users");
+const loginTokens = require("../models/loginTokens");
 
 
 exports.addUser = (req,res,next)=>{

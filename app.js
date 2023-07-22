@@ -19,14 +19,21 @@ const Tags =require("./models/tags")
 const ArticleTypes =require("./models/articleTypes")
 const editeArticleRequest =require("./models/editeArticleRequest")
 const ArticleRequest = require('./models/editeArticleRequest')
-const { tree } = require('gulp')
 require('dotenv').config()
 const port = process.env.PORT;
 const app = express()
 
 //cross origin handling
-
 app.use(cors())
+
+const fs = require(`fs`);
+const https = require('https');
+const options = {
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem')
+}
+const server = https.createServer(options, app);
+
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.json())
@@ -71,8 +78,8 @@ Tags.belongsToMany(Articles, {
   through: 'ArticleTage',
 });
 
-sequelize.sync({force:true}).then((data)=>{
-    bcrypt.hash("123",12).then((hash)=>{
+sequelize.sync({}).then((data)=>{
+    bcrypt.hash("123456",12).then((hash)=>{
     const user =  Users.create({
       name:"samir",
       password:hash,
@@ -84,4 +91,3 @@ sequelize.sync({force:true}).then((data)=>{
 }).catch(()=>{})
 
 app.listen(5000)
-console.log(5000)
